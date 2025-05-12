@@ -7,16 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5AB25C742DD24752005488A0 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB25C732DD24752005488A0 /* TesseractOCR.framework */; };
+		5AB25C752DD24752005488A0 /* TesseractOCR.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB25C732DD24752005488A0 /* TesseractOCR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F9A489F12037776A00887BDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A489F02037776A00887BDC /* AppDelegate.swift */; };
 		F9A489F32037776A00887BDC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A489F22037776A00887BDC /* ViewController.swift */; };
 		F9A489F62037776A00887BDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9A489F42037776A00887BDC /* Main.storyboard */; };
 		F9A489F82037776A00887BDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9A489F72037776A00887BDC /* Assets.xcassets */; };
 		F9A489FB2037776A00887BDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9A489F92037776A00887BDC /* LaunchScreen.storyboard */; };
-		F9A48A032037779E00887BDC /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A48A022037779E00887BDC /* TesseractOCR.framework */; };
 		F9A48A18203781AE00887BDC /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = F9A48A17203781AD00887BDC /* tessdata */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5AB25C762DD24752005488A0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5AB25C752DD24752005488A0 /* TesseractOCR.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		5AB25C732DD24752005488A0 /* TesseractOCR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A489ED2037776A00887BDC /* Example Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A489F02037776A00887BDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9A489F22037776A00887BDC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,19 +49,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9A48A032037779E00887BDC /* TesseractOCR.framework in Frameworks */,
+				5AB25C742DD24752005488A0 /* TesseractOCR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5AB25C722DD24752005488A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5AB25C732DD24752005488A0 /* TesseractOCR.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F9A489E42037776A00887BDC = {
 			isa = PBXGroup;
 			children = (
 				F9A489EF2037776A00887BDC /* Example Swift */,
 				F9A489EE2037776A00887BDC /* Products */,
 				F9A48A022037779E00887BDC /* TesseractOCR.framework */,
+				5AB25C722DD24752005488A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +106,7 @@
 				F9A489E92037776A00887BDC /* Sources */,
 				F9A489EA2037776A00887BDC /* Frameworks */,
 				F9A489EB2037776A00887BDC /* Resources */,
+				5AB25C762DD24752005488A0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

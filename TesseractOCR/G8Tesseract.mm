@@ -148,15 +148,16 @@ static bool tesseractCancelCallbackFunction(void *cancel_this, int words);
         _engineMode = engineMode;
 
         // Path setup and validation
-        if (absoluteDataPath) {
+        if (absoluteDataPath != nil) {
             [self moveTessdataToDirectoryIfNecessary:absoluteDataPath];
-            _absoluteDataPath = absoluteDataPath.copy;
-        } else {
+        }
+        _absoluteDataPath = absoluteDataPath.copy;
+        if (self.absoluteDataPath == nil) {
+            // config Tesseract to search trainedData in tessdata folder of the application bundle];
             _absoluteDataPath = [NSBundle mainBundle].bundlePath;
         }
-
-        _absoluteDataPath = [_absoluteDataPath stringByAppendingString:@"/tessdata/"];
-        setenv("TESSDATA_PREFIX", _absoluteDataPath.fileSystemRepresentation, 1);
+        
+        setenv("TESSDATA_PREFIX", [_absoluteDataPath stringByAppendingPathComponent:@"tessdata"].fileSystemRepresentation, 1);
 
         // Config setup
         if (configDictionary) {
@@ -210,7 +211,7 @@ static bool tesseractCancelCallbackFunction(void *cancel_this, int words);
 
         // Pass the address of our vectors - this creates const pointers to our non-const vectors
         int returnCode = _tesseract->Init(
-                                          self.absoluteDataPath.fileSystemRepresentation,
+                                          [self.absoluteDataPath stringByAppendingPathComponent:@"tessdata"].fileSystemRepresentation,
                                           self.language.UTF8String,
                                           (tesseract::OcrEngineMode)self.engineMode,
                                           configs.empty() ? nullptr : configs.data(),
