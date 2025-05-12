@@ -148,23 +148,15 @@ static bool tesseractCancelCallbackFunction(void *cancel_this, int words);
         _engineMode = engineMode;
 
         // Path setup and validation
-        BOOL shouldConfigureEngine = YES;
         if (absoluteDataPath) {
-            if ([self moveTessdataToDirectoryIfNecessary:absoluteDataPath]) {
-                _absoluteDataPath = absoluteDataPath.copy;
-            } else {
-                shouldConfigureEngine = NO;
-                _absoluteDataPath = absoluteDataPath.copy;  // Still set it even if move fails
-            }
+            [self moveTessdataToDirectoryIfNecessary:absoluteDataPath];
+            _absoluteDataPath = absoluteDataPath.copy;
         } else {
             _absoluteDataPath = [NSBundle mainBundle].bundlePath;
         }
 
-        // Set environment variable regardless of move success
-        if (_absoluteDataPath) {
-            _absoluteDataPath = [_absoluteDataPath stringByAppendingString:@"/tessdata/"];
-            setenv("TESSDATA_PREFIX", _absoluteDataPath.fileSystemRepresentation, 1);
-        }
+        _absoluteDataPath = [_absoluteDataPath stringByAppendingString:@"/tessdata/"];
+        setenv("TESSDATA_PREFIX", _absoluteDataPath.fileSystemRepresentation, 1);
 
         // Config setup
         if (configDictionary) {
@@ -175,9 +167,7 @@ static bool tesseractCancelCallbackFunction(void *cancel_this, int words);
         }
 
         // Initialize engine only if everything is valid
-        if (shouldConfigureEngine) {
-            [self configEngine];
-        }
+        [self configEngine];
     }
     return self;
 }
