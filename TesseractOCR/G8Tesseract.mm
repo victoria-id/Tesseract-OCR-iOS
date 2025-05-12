@@ -150,7 +150,7 @@ static bool tesseractCancelCallbackFunction(void *cancel_this, int words);
         // Path setup and validation
         if (absoluteDataPath) {
             [self moveTessdataToDirectoryIfNecessary:absoluteDataPath];
-            _absoluteDataPath = absoluteDataPath.copy;
+            _absoluteDataPath = absoluteDataPath;
         } else {
             _absoluteDataPath = [NSBundle mainBundle].bundlePath;
         }
