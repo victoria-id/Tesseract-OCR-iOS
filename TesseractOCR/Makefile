@@ -15,8 +15,8 @@ ARCHS = arm64 arm64-simulator x86_64-simulator
 COMMON_FLAGS = -pipe -no-cpp-precomp -miphoneos-version-min=15.0 -O2
 
 # Library configurations
-JPEG_SRC_NAME = jpegsrc.v9a
-JPEG_DIR_NAME = jpeg-9a
+JPEG_SRC_NAME = jpegsrc.v9f
+JPEG_DIR_NAME = jpeg-9f
 JPEG_SRC = $(TESSERACT_ROOT)/$(JPEG_DIR_NAME)
 JPEG_BUILD_DIR = $(BUILD_DIR)/jpeg
 JPEG_INSTALL_DIR = $(INSTALL_DIR)/jpeg
@@ -220,7 +220,13 @@ $(TIFF_SRC)/configure:
 	curl -L https://download.osgeo.org/libtiff/$(TIFF_NAME).tar.gz | tar -xpf-
 
 # Leptonica target
-leptonica: clean-leptonica jpeg png tiff
+autogen-leptonica:
+	@cd $(LEPTON_SRC) && \
+	if [ ! -f configure ]; then \
+		./autogen.sh; \
+	fi
+
+leptonica: clean-leptonica autogen-leptonica jpeg png tiff
 	@echo "Building Leptonica for architectures: $(ARCHS)"
 	@for arch in $(ARCHS); do \
 		echo "Building Leptonica for $$arch"; \

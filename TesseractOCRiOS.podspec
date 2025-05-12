@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.header_dir		     = 'TesseractOCR'
   s.name                    = 'TesseractOCRiOS'
-  s.version                 = '5.0.1'
+  s.version                 = '5.5.0'
 
   s.summary                 = 'Use Tesseract OCR in iOS projects written in either Objective-C or Swift.'
 
