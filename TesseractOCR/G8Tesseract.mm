@@ -155,7 +155,7 @@ static bool tesseractCancelCallbackFunction(void *cancel_this, int words);
             _absoluteDataPath = [NSBundle mainBundle].bundlePath;
         }
 
-        _absoluteDataPath = [_absoluteDataPath stringByAppendingString:@"/tessdata/"];
+        _absoluteDataPath = [_absoluteDataPath stringByAppendingString:@"tessdata"];
         setenv("TESSDATA_PREFIX", _absoluteDataPath.fileSystemRepresentation, 1);
 
         // Config setup
