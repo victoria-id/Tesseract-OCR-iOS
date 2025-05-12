@@ -61,6 +61,9 @@
 /* Enable NEON instructions */
 /* #undef HAVE_NEON */
 
+/* Enable RVV instructions */
+/* #undef HAVE_RVV */
+
 /* Enable SSE 4.1 instructions */
 #define HAVE_SSE4_1 1
 
@@ -85,10 +88,6 @@
 /* Define to 1 if you have the <sys/types.h> header file. */
 #define HAVE_SYS_TYPES_H 1
 
-/* Define to 1 if you have the <tensorflow/core/framework/graph.pb.h> header
-   file. */
-/* #undef HAVE_TENSORFLOW_CORE_FRAMEWORK_GRAPH_PB_H */
-
 /* Define to 1 if you have the <tiffio.h> header file. */
 #define HAVE_TIFFIO_H 1
 
@@ -101,6 +100,9 @@
 /* Define to the sub-directory where libtool stores uninstalled libraries. */
 #define LT_OBJDIR ".libs/"
 
+/* This is a MinGW system */
+/* #undef MINGW */
+
 /* Name of package */
 #define PACKAGE "tesseract"
 
@@ -108,13 +110,13 @@
 #define PACKAGE_BUGREPORT "https://github.com/tesseract-ocr/tesseract/issues"
 
 /* Official date of release */
-#define PACKAGE_DATE "06/11"
+#define PACKAGE_DATE "11/10"
 
 /* Name of package */
 #define PACKAGE_NAME "tesseract"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "tesseract 5.4.1"
+#define PACKAGE_STRING "tesseract 5.5.0"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "tesseract"
@@ -123,7 +125,7 @@
 #define PACKAGE_URL "https://github.com/tesseract-ocr/tesseract/"
 
 /* Version number */
-#define PACKAGE_VERSION "5.4.1"
+#define PACKAGE_VERSION "5.5.0"
 
 /* Official year for this release */
 #define PACKAGE_YEAR "2024"
@@ -134,7 +136,7 @@
 #define STDC_HEADERS 1
 
 /* Version number of package */
-#define VERSION "5.4.1"
+#define VERSION "5.5.0"
 
 
 
