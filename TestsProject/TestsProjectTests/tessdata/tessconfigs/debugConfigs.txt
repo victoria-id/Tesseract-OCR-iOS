@@ -1,2 +1,0 @@
-multilang_debug_level    1
-paragraph_debug_level    1
