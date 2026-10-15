@@ -1,0 +1,4 @@
+module Leptonica [system] {
+    header "allheaders.h"
+    export *
+}
