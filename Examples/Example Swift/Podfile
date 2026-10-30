@@ -1,0 +1,8 @@
+platform :ios, '15.0'
+
+target 'Example Swift' do
+  use_frameworks!
+
+  # Local checkout; consumers use :git => 'https://github.com/victoria-id/Tesseract-OCR-iOS', :tag => '<version>'
+  pod 'TesseractOCRiOS', :path => '../..'
+end
