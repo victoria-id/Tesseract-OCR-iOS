@@ -1,0 +1,16 @@
+PODS:
+  - TesseractOCRiOS (5.5.3)
+
+DEPENDENCIES:
+  - TesseractOCRiOS (from `../..`)
+
+EXTERNAL SOURCES:
+  TesseractOCRiOS:
+    :path: "../.."
+
+SPEC CHECKSUMS:
+  TesseractOCRiOS: c3dc0deddf6721059da971dcd8211caeafe8237b
+
+PODFILE CHECKSUM: d4ed96a9fbfc9be36e57b11f2d0ae2ec068aad2a
+
+COCOAPODS: 1.17.0
